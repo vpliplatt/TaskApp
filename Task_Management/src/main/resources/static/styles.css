@@ -1,0 +1,70 @@
+
+
+
+
+
+
+.task-entry {
+    /*margin: 1.2rem 0;*/
+    padding: 0.8rem 1rem;
+    border-bottom: 1px dashed #d9c7a6;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.task-entry:hover {
+    background-color: rgba(217, 199, 166, 0.2);
+}
+
+.task-link {
+    text-decoration: none;
+    color: #5a3921;
+    display: block;
+    transition: color 0.3s;
+}
+
+.task-link:hover {
+    color: #8b4513;
+    text-decoration: none !important;
+}
+
+input[type="text"] {
+    border: 2px solid #4CAF50;
+}
+
+
+
+
+
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+    border-color: #007BFF;
+}
+
+button, select {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* Blue button background */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover, select:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+select {
+    background-color: #007BFF; /* Blue dropdown background */
+}

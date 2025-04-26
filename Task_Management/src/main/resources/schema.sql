@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS task (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  discription VARCHAR(1000) NULL,
+  duedate DATE NOT NULL,
+  priority ENUM ('HIGH', 'MEDIUM', 'LOW'),
+  status ENUM('PENDING','COMPLETED'),
+  createdAt  DATETIME NOT NULL
+);

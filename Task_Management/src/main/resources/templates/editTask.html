@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task Page</title>
+	<link rel="stylesheet"
+	    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+	
+	  <div class="container">
+		
+					
+		<form th:action= "@{/edit/{id}(id=${task.id})}"  method = "post">
+			
+			Title:<input 
+						th:value="${task.title}"
+						type = "text"
+						name = "title"><br/>
+						
+			Discription: <input 
+					th:value="${task.discription}"
+					type = "text"
+					name = "discription">
+					
+					<br/>
+					
+					
+			Priority: <select name="priority">	
+									
+							<option th:each="Priority : ${T(edu.vwcc.app.model.Priority).values()}"
+										    th:value="${Priority}"
+										    th:text="${Priority}">
+											th:selected = "${task.priority}"
+						 </option>
+						</select>
+						<br/>
+										
+										
+			Status: <select name="status">				
+					<option th:each="Status : ${T(edu.vwcc.app.model.Status).values()}"
+							th:value="${Status}"
+							th:text="${Status}">
+							th:selected = "${task.status}"
+					 </option>
+					</select>
+					<br/>	
+								
+					
+			DueDate: <input 
+						type = "date"
+						name = "duedate"
+						th:value= "${task.duedate}">
+						<br/>	
+						
+			
+				<button type = "submit">Update Task</button>
+
+			</form>
+		
+		
+		
+			
+				</div>
+							
+					
+				<a th:href="|@{/}|" class="btn btn-danger">Back</a>
+						
+					</div>
+		</body>
+</html>
