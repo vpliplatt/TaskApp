@@ -28,8 +28,6 @@ public class MainController {
 	        return "index.html";
 	        
 	    }
-	 
-	   
 	   
 	    @GetMapping("/edit/{id}")
 	    public String taskDetails(@PathVariable Long id, Model model) {
@@ -42,7 +40,6 @@ public class MainController {
 	        model.addAttribute("task",taskOptional.get());
 	        return "edittask.html";
 	    }
-
 	    
 	   @PostMapping("/edit/{id}")
 	    public String taskUpdate(@PathVariable("id") String id
@@ -71,11 +68,9 @@ public class MainController {
 			
 			model.addAttribute("tasks",tasks);
 			return "redirect:/";
-		
 
 }
-	    
-	    
+
 	   
 		//Navigate to task page
 		@PostMapping("/task")
@@ -89,7 +84,7 @@ public class MainController {
 	    		    	 	
 	    	  System.out.println(id);
 			  long longID = Long.parseLong(id);
-			  Task t=  taskRepository.findById(longID).get();
+			  Task t =  taskRepository.findById(longID).get();
 			  taskRepository.delete(t);   	
 			  var tasks = taskRepository.findAllByOrderByCreatedAtAsc();
 			
